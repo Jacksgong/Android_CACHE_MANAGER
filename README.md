@@ -43,7 +43,7 @@ Android_CACHE_MANAGER
     private Map<String, byte[]> mCache = Collections.synchronizedMap(new LinkedHashMap<String, byte[]>(INIT_CAPACITY, LOAD_FACTOR, true));
     private Map<String, WeakReference<byte[]>> mWeakCache = new ConcurrentHashMap<String, WeakReference<byte[]>>();
     
-也许你会问为什么做了这些分析，强引用线程池还使用Collections.synchronizedMap，我想coderanch.com论坛的Steve已经给我做出了答复：
+也许你会问为什么做了这些分析，强引用缓存池还使用Collections.synchronizedMap，我想coderanch.com论坛的Steve已经给我做出了答复：
 
     You will have to come up with the requirements for your storage structure to figure out which one is best. There are two big differences: 
 
@@ -62,7 +62,7 @@ Android_CACHE_MANAGER
     - How much work would it take to make ConcurrentSkipListMap (or ConcurrentHashMap) sort like the LinkedHashMap?At first blush, this might seem easy (CSKLM uses a comparator, so just make a comparator for access time) but it won't be (you would be sorting on something other than the Key (insertion/access order), your structure would have to change with access, not just insertion, iteration would be affected...). 
     - Is the Map you come up with efficient enough to use?
 
-因此目前强引用线程池，这么做是折中的选择，当然还有很大的优化空间。我承认这里完全可以我们自己写一个线程安全的LinkedHashMap或支持LRU的ConcurrenthashMap，因为我们有他们的源码与详细的分析文稿。暂时如此，以后抽空优化。
+因此目前强引用缓存池，这么做是折中的选择，当然还有很大的优化空间。我承认这里完全可以我们自己写一个线程安全的LinkedHashMap或支持LRU的ConcurrenthashMap，因为我们有他们的源码与详细的分析文稿。暂时如此，以后抽空优化。
 
 当然，虽然测试结果ConcurrentSkipListMap在高并发下有优势，但是就4线程1.6万数据而言ConcurrentHashMap的优势，让我毫不犹豫的使用了ConcurrentHashMap。
 
