@@ -16,7 +16,7 @@ import cn.dreamtobe.library.cache.util.Util;
  * 
  * @author Jacksgong
  * @since 2013-7-11 上午8:51:58
- * @Web http://blog.dreamtobe.cn
+ * @Web http://blog.dreamtobe.cn/1470.html
  */
 public class MemoryCache extends CacheBase {
 

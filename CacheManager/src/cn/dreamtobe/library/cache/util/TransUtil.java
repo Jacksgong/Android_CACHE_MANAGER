@@ -13,7 +13,7 @@ import android.os.Parcelable;
  * 
  * @author Jacksgong
  * @since 2013-12-16 下午8:24:40
- * @Web http://blog.dreamtobe.cn
+ * @Web http://blog.dreamtobe.cn/1470.html
  */
 public class TransUtil {
 

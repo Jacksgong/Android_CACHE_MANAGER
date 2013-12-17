@@ -3,7 +3,7 @@ package cn.dreamtobe.library.cache.util;
 /**
  * 
  * @author Jacksgong
- * @Web http://blog.dreamtobe.cn
+ * @Web http://blog.dreamtobe.cn/1470.html
  */
 public class Util {
 

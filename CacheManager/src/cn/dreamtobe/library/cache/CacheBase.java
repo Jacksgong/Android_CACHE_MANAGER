@@ -4,7 +4,7 @@ package cn.dreamtobe.library.cache;
  * 
  * @author Jacksgong
  * 
- * @Web http://blog.dreamtobe.cn
+ * @Web http://blog.dreamtobe.cn/1470.html
  */
 public abstract class CacheBase {
 

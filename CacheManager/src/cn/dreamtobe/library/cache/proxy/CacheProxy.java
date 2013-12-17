@@ -13,7 +13,7 @@ import cn.dreamtobe.library.cache.util.TransUtil;
  * 
  * @author Jacksgong
  * @since 2013-12-16 下午8:47:17
- * @Web http://blog.dreamtobe.cn
+ * @Web http://blog.dreamtobe.cn/1470.html
  */
 public class CacheProxy {
 
@@ -56,21 +56,21 @@ public class CacheProxy {
 
 	// --------------- InCache
 	// byte[]
-	public String putToMemory(String key, byte[] b) {
+	public String putIntoMemory(String key, byte[] b) {
 		return HoldClass.MEMORY_CACHE.inCache(key, b);
 	}
 
-	public String putToMemory(byte[] b) {
-		return putToMemory(null, b);
+	public String putIntoMemory(byte[] b) {
+		return putIntoMemory(null, b);
 	}
 
 	// Bitmap
-	public String putToMemory(String key, Bitmap b) {
+	public String putIntoMemory(String key, Bitmap b) {
 		return HoldClass.MEMORY_CACHE.inCache(key, TransUtil.bitmap2Bytes(b));
 	}
 
-	public String putToMemory(Bitmap b) {
-		return putToMemory(null, b);
+	public String putIntoMemory(Bitmap b) {
+		return putIntoMemory(null, b);
 	}
 
 	// Parcelable
@@ -85,40 +85,40 @@ public class CacheProxy {
 	 *            4.Parcelable不能使用在要将数据存储在磁盘上的情况，因为Parcelable不能很好的保证数据的持续性在外界有变化的情况下。尽管Serializable效率低点， 也不提倡用，但在这种情况下，还是建议你用Serializable 。
 	 * @return
 	 */
-	public String putToMemory(String key, Parcelable p) {
+	public String putIntoMemory(String key, Parcelable p) {
 		return HoldClass.MEMORY_CACHE.inCache(key, TransUtil.parcelable2Bytes(p));
 	}
 
-	public String putToMemory(Parcelable p) {
-		return putToMemory(null, p);
+	public String putIntoMemory(Parcelable p) {
+		return putIntoMemory(null, p);
 	}
 
 	// *Weak
 	// bytes
-	public String putToWeakM(String key, byte[] b) {
+	public String putIntoWeakM(String key, byte[] b) {
 		return HoldClass.MEMORY_CACHE.inWeakCache(key, b);
 	}
 
-	public String putToWeakM(byte[] b) {
-		return putToWeakM(null, b);
+	public String putIntoWeakM(byte[] b) {
+		return putIntoWeakM(null, b);
 	}
 
 	// Bitmap
-	public String putToWeakM(String key, Bitmap b) {
+	public String putIntoWeakM(String key, Bitmap b) {
 		return HoldClass.MEMORY_CACHE.inWeakCache(key, TransUtil.bitmap2Bytes(b));
 	}
 
-	public String putToWeakM(Bitmap b) {
-		return putToWeakM(null, b);
+	public String putIntoWeakM(Bitmap b) {
+		return putIntoWeakM(null, b);
 	}
 
 	// Parcelable
-	public String putToWeakM(String key, Parcelable p) {
+	public String putIntoWeakM(String key, Parcelable p) {
 		return HoldClass.MEMORY_CACHE.inWeakCache(key, TransUtil.parcelable2Bytes(p));
 	}
 
-	public String putToWeakM(Parcelable p) {
-		return putToWeakM(null, p);
+	public String putIntoWeakM(Parcelable p) {
+		return putIntoWeakM(null, p);
 	}
 
 	// --------- remove

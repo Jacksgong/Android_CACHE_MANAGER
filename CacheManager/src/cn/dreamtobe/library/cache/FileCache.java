@@ -12,7 +12,7 @@ import java.util.Comparator;
  * 
  * @author Jacksgong
  * @since 2013-7-10 下午7:26:26
- * @Web http://blog.dreamtobe.cn
+ * @Web http://blog.dreamtobe.cn/1470.html
  */
 public class FileCache extends CacheBase {
 
